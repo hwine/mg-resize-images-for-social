@@ -13,14 +13,18 @@ from PIL import Image
     Facebook event - for the sale listing on the calendar - 1920 x 1005 pixels
     Event Brite Image - 2160 x 1080px
     Twitter image - so many sizes to choose from on this platform - I can use the 1080 x 1080 square.
+    Next door image -  700 x 240
+    patch image - 1200 x 900
 """
 Site = namedtuple("Site", "name hint max_x max_y")
 sites = [
     Site("Instagram", "ig", 1080, 1080),
-    Site("Facebood", "fb", 1200, 630),
+    Site("Facebook", "fb", 1200, 630),
     Site("FB_event", "fbe", 1920, 630),
     Site("EventBrite", "eb", 2160, 1080),
-    Site("Twitter", "tw", 1080, 1080)
+    Site("Twitter", "tw", 1080, 1080),
+    Site("Nextdoor", "nd", 700, 240),
+    Site("Patch", "pch", 1200, 900),
 ]
 
 def resize_image(image, specs):

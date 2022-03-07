@@ -34,6 +34,10 @@ def resize_image(image, specs):
     new_x = int(cur_x * ratio)
     new_y = int(cur_y * ratio)
     resized_image = image.resize((new_x, new_y))
+    # get rid of alpha channel, since we store as jpeg
+    # based on https://stackoverflow.com/a/48248432
+    if resized_image.mode in ("RGBA", "P"):
+        resized_image = resized_image.convert("RGB")
     return resized_image, specs.hint
 
 
